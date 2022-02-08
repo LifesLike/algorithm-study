@@ -7,7 +7,6 @@ import sys
 
 if __name__ == '__main__':
     T = int(sys.stdin.readline())
-    test_cases = []
 
     for _ in range(T):
         height, width, N = map(int, sys.stdin.readline().split())
