@@ -27,6 +27,6 @@ if __name__ == '__main__':
             best_probability = probability
             best_name = candidate
         elif probability == best_probability:
-            best_name = candidate if candidate < best_name else best_name
+            best_name = min(candidate, best_name)
 
     print(best_name)
