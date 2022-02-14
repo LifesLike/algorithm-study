@@ -22,13 +22,17 @@ def btn_b(val):
 
 
 def bfs(start, goal, max_depth):
+
+    if start == goal:
+        return 0
+
     q = queue.Queue()
     q.put((0, start))
     visit = [0 for _ in range(100000)]
     visit[start] = 1
 
     while not q.empty():
-        depth, node_val, = q.get()
+        depth, node_val = q.get()
 
         child_a = btn_a(node_val)
         child_b = btn_b(node_val)
