@@ -25,7 +25,6 @@ def solution(n, s, a, b, fares):
     for c in range(n):
         mini = min(mini, costs[s-1][c] + costs[c][a-1] + costs[c][b-1])
 
-
     return mini
 
 
