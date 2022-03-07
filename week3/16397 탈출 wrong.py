@@ -37,10 +37,12 @@ def bfs(start, goal, max_depth):
         child_a = btn_a(node_val)
         child_b = btn_b(node_val)
 
-        if child_a == goal or child_b == goal:
-            return depth + 1
+        # if child_a == goal or child_b == goal:
+        #     return depth + 1
 
         if depth < max_depth:
+            if child_a == goal or child_b == goal:
+                return depth + 1
             if child_a != -1 and not visit[child_a]:
                 q.put((depth + 1, child_a))
                 visit[child_a] = 1
