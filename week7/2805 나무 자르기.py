@@ -11,12 +11,13 @@ if __name__ == '__main__':
     while start <= end:
         cut_length = (start + end) // 2
         remainder = 0
+
         for tree in trees:
             remainder += max(0, tree - cut_length)
 
         if remainder >= M:
-            start = cut_length + 1
             solution = cut_length
+            start = cut_length + 1
         else:
             end = cut_length - 1
 
