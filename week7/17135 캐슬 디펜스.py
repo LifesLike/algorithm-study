@@ -38,6 +38,7 @@ if __name__ == '__main__':
                                 if (i, j) not in position:
                                     cur_point += 1
                                     position.append((i, j))
+
             for i, j in position:
                 cur_field[i][j] = 0
 
