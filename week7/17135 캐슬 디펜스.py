@@ -14,7 +14,6 @@ if __name__ == '__main__':
     for ar1, ar2, ar3, in combination:
         cur_point = 0
         cur_field = [row[:] for row in field]
-        # position = []
 
         for cnt in range(N - 1, -1, -1):
             ar1_shot = ar2_shot = ar3_shot = False
