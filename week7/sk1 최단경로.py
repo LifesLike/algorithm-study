@@ -1,16 +1,16 @@
-import math
+from math import factorial
 
 
 def solution(width, height, diagonals):
     answer = 0
 
     for i, j in diagonals:
-        part1 = math.factorial(i - 1 + j) // (math.factorial(i - 1) * math.factorial(j))
-        part2 = math.factorial(width - i + height - j + 1) // (math.factorial(width - i) * math.factorial(height - j + 1))
+        part1 = factorial(i - 1 + j) // (factorial(i - 1) * factorial(j))
+        part2 = factorial(width - i + height - j + 1) // (factorial(width - i) * factorial(height - j + 1))
         answer += part1 * part2
 
-        part1 = math.factorial(i + j - 1) // (math.factorial(i) * math.factorial(j - 1))
-        part2 = math.factorial(width - i + 1 + height - j) // (math.factorial(width - i + 1) * math.factorial(height - j))
+        part1 = factorial(i + j - 1) // (factorial(i) * factorial(j - 1))
+        part2 = factorial(width - i + 1 + height - j) // (factorial(width - i + 1) * factorial(height - j))
         answer += part1 * part2
 
         answer %= 10000019
