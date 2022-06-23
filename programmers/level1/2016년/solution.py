@@ -1,5 +1,5 @@
 def solution(a, b):
-    day = ['FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED', 'THU']
+    day_of_week = ['FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED', 'THU']
     day_of_month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     day_of_year = 0
 
@@ -8,7 +8,7 @@ def solution(a, b):
 
     day_of_year += b
 
-    return day[(day_of_year - 1) % 7]
+    return day_of_week[(day_of_year - 1) % 7]
 
 
 if __name__ == '__main__':
