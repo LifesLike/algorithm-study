@@ -7,7 +7,6 @@ def solution(n):
             for j in range(i + i, n + 1, i):
                 primes[j] = False
 
-    print(primes)
     return primes.count(True) - 2
 
 
