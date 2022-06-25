@@ -1,5 +1,6 @@
 def solution(s):
-    answer = s
+    answer = len(s)
+
     for stride in range(1, len(s) // 2 + 2):
         temp = ""
         compressed = 1
@@ -21,9 +22,9 @@ def solution(s):
         else:
             temp += prev
 
-        answer = min(answer, temp, key=len)
+        answer = min(answer, len(temp))
 
-    return len(answer)
+    return answer
 
 
 if __name__ == '__main__':
