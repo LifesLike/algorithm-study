@@ -2,14 +2,13 @@ def solution(parenthesis):
     if not parenthesis:
         return ""
 
-    stack = []
+    u = ""
     for p in parenthesis:
-        stack.append(p)
-        if stack.count('(') == stack.count(')'):
+        u += p
+        if u.count('(') == u.count(')'):
             break
 
-    u = "".join(stack)
-    v = parenthesis[len(stack):]
+    v = parenthesis[len(u):]
 
     if isright(u):
         return u + solution(v)
