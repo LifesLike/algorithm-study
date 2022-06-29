@@ -9,8 +9,9 @@ def solution(target):
         answer = min(answer, 2 * positions[i] + len(target) - positions[i + 1],
                      2 * (len(target) - positions[i + 1]) + positions[i])
 
-    for i, name in enumerate(target):
-        answer += min(ord(name) - a_ascii, z_ascii - ord(name) + 1)
+    for i in positions:
+        answer += min(ord(target[i]) - a_ascii, z_ascii - ord(target[i]) + 1)
+
     return answer
 
 
