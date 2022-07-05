@@ -7,14 +7,14 @@ def solution(relation):
 
     for i in range(1, len(relation) + 1):
         for combination in combinations(range(len(relation)), i):
-            flag = True
+            candidate_possible = True
 
             for candidate in candidates:
                 if all(elem in combination for elem in candidate):
-                    flag = False
+                    candidate_possible = False
                     break
 
-            if flag:
+            if candidate_possible:
                 temp = []
                 for idx in combination:
                     temp.append(relation[idx])
