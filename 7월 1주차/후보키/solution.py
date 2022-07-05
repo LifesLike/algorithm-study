@@ -3,7 +3,8 @@ import itertools as it
 
 def solution(relation):
     relation = list(zip(*relation))
-    candidates = set()
+    candidates = []
+
     for i in range(1, len(relation) + 1):
         combinations = it.combinations(range(len(relation)), i)
         for combination in combinations:
@@ -20,7 +21,7 @@ def solution(relation):
                     temp.append(relation[idx])
 
                 if len(set(zip(*temp))) == len(relation[0]):
-                    candidates.add(combination)
+                    candidates.append(combination)
 
     return len(candidates)
 
