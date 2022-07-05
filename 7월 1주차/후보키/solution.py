@@ -1,4 +1,4 @@
-import itertools as it
+from itertools import combinations
 
 
 def solution(relation):
@@ -6,8 +6,7 @@ def solution(relation):
     candidates = []
 
     for i in range(1, len(relation) + 1):
-        combinations = it.combinations(range(len(relation)), i)
-        for combination in combinations:
+        for combination in combinations(range(len(relation)), i):
             flag = True
 
             for candidate in candidates:
