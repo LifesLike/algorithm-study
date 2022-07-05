@@ -9,11 +9,7 @@ def solution(id_list, reports, k):
 
     answer = []
     for id in id_list:
-        mail = 0
-        for dst in report_result[id]:
-            if block[dst] >= k:
-                mail += 1
-        answer.append(mail)
+        answer.append(sum(map(lambda x: block[x] >= k, report_result[id])))
 
     return answer
 
