@@ -2,9 +2,6 @@ from math import gcd
 
 
 def solution(arr):
-    if len(arr) == 1:
-        return arr[0]
-
     while len(arr) > 1:
         num1, num2 = arr.pop(), arr.pop()
         arr.append(num1*num2 // gcd(num1, num2))
