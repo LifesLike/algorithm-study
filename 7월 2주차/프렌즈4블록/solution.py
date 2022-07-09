@@ -12,11 +12,11 @@ def solution(m, n, board):
             board[i][j] = board[i+1][j] = board[i][j+1] = board[i+1][j+1] = " "
 
         board = list(map(list, zip(*board)))
-        temp = []
+        columns = []
         for line in board:
-            temp.append(list("".join(line).replace(" ", "").rjust(m, " ")))
+            columns.append(list("".join(line).replace(" ", "").rjust(m, " ")))
 
-        board = list(map(list, zip(*temp)))
+        board = list(map(list, zip(*columns)))
 
         if not remove_positions:
             break
