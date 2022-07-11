@@ -1,25 +1,26 @@
 def solution(m, n, board):
-    board = [list(board[i]) for i in range(len(board))]
+    board = [list(column) for column in zip(*board)]
 
     while True:
         remove_positions = []
-        for i in range(m - 1):
-            for j in range(n - 1):
+        for i in range(n - 1):
+            for j in range(m - 1):
                 if board[i][j].isalpha() and board[i][j] == board[i+1][j] == board[i][j+1] == board[i+1][j+1]:
                     remove_positions.append((i, j))
+
+        if not remove_positions:
+            break
 
         for i, j in remove_positions:
             board[i][j] = board[i+1][j] = board[i][j+1] = board[i+1][j+1] = " "
 
-        board = list(map(list, zip(*board)))
-        columns = []
+        compressed = []
         for line in board:
-            columns.append(list("".join(line).replace(" ", "").rjust(m, " ")))
+            compressed.append(list("".join(line)
+                                   .replace(" ", "")
+                                   .rjust(m, " ")))
 
-        board = list(map(list, zip(*columns)))
-
-        if not remove_positions:
-            break
+        board = compressed
 
     return sum(line.count(' ') for line in board)
 
