@@ -1,5 +1,4 @@
 def solution(msg):
-    msg = list(msg)
     word_map = {chr(word): i + 1 for i, word in enumerate(range(ord('A'), ord('Z') + 1))}
     next_index = 27
 
