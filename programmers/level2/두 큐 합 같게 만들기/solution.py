@@ -14,7 +14,7 @@ def solution(queue1, queue2):
     if (queue1_sum + queue2_sum) % 2 != 0:
         return -1
 
-    while push_pop_cnt < 2 * limit:
+    while push_pop_cnt < 4 * limit:
         if queue1_sum == queue2_sum:
             return push_pop_cnt
         if queue1_sum > queue2_sum:
